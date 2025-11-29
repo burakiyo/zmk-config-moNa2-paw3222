@@ -62,9 +62,10 @@
     status = "okay";
     device = <&trackball_central>;
 
-    // 時計回りに90度回転（XY入れ替え + X軸反転）
+    // 時計回りに90度回転（XY入れ替え + X軸反転）+ オートマウスレイヤー
     input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-                       <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>;
+                       <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
+                       <&zip_temp_layer 1 500>;  //オートマウスレイヤー（レイヤー1に500ms切り替え）
 
     scroller {
         layers = <2>;
